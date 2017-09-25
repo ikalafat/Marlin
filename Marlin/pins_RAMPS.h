@@ -62,11 +62,6 @@
 #else
   #define SERVO0_PIN       11
 #endif
-#define SERVO1_PIN          6
-#define SERVO2_PIN          5
-#ifndef SERVO3_PIN
-  #define SERVO3_PIN        4
-#endif
 
 //
 // Limit Switches
@@ -350,26 +345,23 @@
       #define DOGLCD_A0         27
       #define LCD_BACKLIGHT_PIN 33
     #elif ENABLED(MINIPANEL)
-      #define BEEPER_PIN        42
-      // Pins for DOGM SPI LCD Support
-      #define DOGLCD_A0         44
-      #define DOGLCD_CS         66
-      #define LCD_BACKLIGHT_PIN 65 // backlight LED on A11/D65
-      #define SDSS              53
-
-      #define KILL_PIN          64
-      // GLCD features
-      //#define LCD_CONTRAST   190
-      // Uncomment screen orientation
-      //#define LCD_SCREEN_ROT_90
-      //#define LCD_SCREEN_ROT_180
-      //#define LCD_SCREEN_ROT_270
-      // The encoder and click button
-      #define BTN_EN1           40
-      #define BTN_EN2           63
-      #define BTN_ENC           59
-      // not connected to a pin
-      #define SD_DETECT_PIN     49
+       #define MISO_PIN      50  // system defined - only needed if using onboard SD card
+       #define MOSI_PIN      51  // system defined
+       #define SCK_PIN       52  // system defined
+       #define SDSS          53  // only needed if using onboard SD card
+    
+       #define BEEPER_PIN    37
+    
+       #define BTN_EN1       31
+       #define BTN_EN2       33
+       #define BTN_ENC       35
+    
+       //#define KILL_PIN      41  // optional
+    
+       #define SD_DETECT_PIN 49  // only needed if using onboard SD card
+    
+       #define DOGLCD_CS     25
+       #define DOGLCD_A0     27
 
     #else
 
