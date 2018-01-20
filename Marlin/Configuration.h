@@ -626,13 +626,13 @@
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
-#define Z_ENDSTOP_SERVO_NR 0   // Defaults to SERVO 0 connector.
+//#define Z_ENDSTOP_SERVO_NR 0   // Defaults to SERVO 0 connector.
 #define Z_SERVO_ANGLES {10,90}  // Z Servo Deploy and Stow angles
 
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 #if ENABLED(BLTOUCH)
   //#define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
 #endif
@@ -644,8 +644,8 @@
  * These options are most useful for the BLTouch probe, but may also improve
  * readings with inductive probes and piezo sensors.
  */
-//#define PROBING_HEATERS_OFF       // Turn heaters off when probing
-//#define PROBING_FANS_OFF          // Turn fans off when probing
+#define PROBING_HEATERS_OFF       // Turn heaters off when probing
+#define PROBING_FANS_OFF          // Turn fans off when probing
 //#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // A probe that is deployed and stowed with a solenoid pin (SOL1_PIN)
@@ -683,7 +683,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.85   // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 6000
+#define XY_PROBE_SPEED 4800
 
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -716,7 +716,7 @@
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
 // :{ 0:'Low', 1:'High' }
@@ -771,8 +771,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 190
-#define Y_BED_SIZE 190
+#define X_BED_SIZE 165
+#define Y_BED_SIZE 180
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -904,14 +904,12 @@
 #elif ENABLED(AUTO_BED_LEVELING_3POINT)
 
   // 3 arbitrary points to probe.
-  // A simple cross-product is used to estimate the plane of the bed.
-  #define ABL_PROBE_PT_1_X 105 //sredina
-  #define ABL_PROBE_PT_1_Y 150 //iza
+  // A simple cross-product is used to estimate the plane of the bed. 
+  #define ABL_PROBE_PT_1_X 15 //lijevo
+  #define ABL_PROBE_PT_1_Y 20 //naprijed
 
-  
-  #define ABL_PROBE_PT_2_X 15 //lijevo
-  #define ABL_PROBE_PT_2_Y 20 //naprijed
-
+  #define ABL_PROBE_PT_2_X 105 //sredina
+  #define ABL_PROBE_PT_2_Y 150 //iza
   
   #define ABL_PROBE_PT_3_X 140 //desno
   #define ABL_PROBE_PT_3_Y 20 //naprijed
@@ -998,7 +996,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (30*60)
-#define HOMING_FEEDRATE_Z  (6*60)
+#define HOMING_FEEDRATE_Z  (4*60)
 
 //=============================================================================
 //============================= Additional Features ===========================
