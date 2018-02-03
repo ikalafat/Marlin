@@ -354,9 +354,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  #define  DEFAULT_Kp 12.33
-  #define  DEFAULT_Ki 0.51
-  #define  DEFAULT_Kd 74.50
+  #define  DEFAULT_Kp 14.37
+  #define  DEFAULT_Ki 0.69
+  #define  DEFAULT_Kd 75.33
   
   // Ultimaker
   //#define  DEFAULT_Kp 22.2
@@ -540,7 +540,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 5, 35 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 8, 35 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -689,7 +689,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER -25  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -41  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -2.5   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -2.2   // Z offset: -below +above  [the nozzle]
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 4000
